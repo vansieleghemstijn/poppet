@@ -155,7 +155,7 @@ class Facebookauth(db.Model):
     id          = db.Column(db.Integer, primary_key=True)
     profile_id  = db.Column(db.String(30), nullable=False,index=True)
     site_id     = db.Column(db.Integer, db.ForeignKey('wifisite.id'))    
-    token       = db.Column(db.String(100), nullable=False)
+    token       = db.Column(db.Text, nullable=False)
     state       = db.Column(db.Integer)
     guests      = db.relationship('Guest', backref='facebookauth',lazy='dynamic')
     
